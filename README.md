@@ -16,7 +16,7 @@ A simple service for doctors to summarize and translate medical transcripts.
 uv sync
 ```
 
-2. Create a .env file and set your Google API key:
+2. Create a .env file and set your Google (Gemini) API key:
 ```
 GOOGLE_API_KEY=your-api-key-here
 ```
