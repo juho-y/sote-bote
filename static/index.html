@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Transcript Summarizer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Medical Transcript Summarizer</h1>
+
+    <div>
+        <label for="transcript">Paste your transcript here:</label>
+        <textarea id="transcript" placeholder="Enter the transcript you want to summarize..."></textarea>
+    </div>
+
+    <div class="controls">
+        <div class="language-select">
+            <label for="language">Summary language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="fi">Finnish</option>
+                <option value="sv">Swedish</option>
+            </select>
+        </div>
+        <button onclick="summarize()">Summarize</button>
+    </div>
+
+    <div class="summary-box">
+        <h3>Summary:</h3>
+        <p id="summary" class="placeholder">No summary yet. Paste your transcript above and click "Summarize" to get started.</p>
+        <div id="keypoints"></div>
+    </div>
+
+    <div class="summary-box" id="error-box" style="display: none;">
+        <h3>Error:</h3>
+        <p id="error-message"></p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/5.9.2/typescript.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module">
+        async function loadTs() {
+            const response = await fetch('/static/app.ts');
+            const tsCode = await response.text();
+            const jsCode = window.ts.transpile(tsCode, { target: "es2015" });
+            let script = document.createElement('script');
+            script.type = 'module';
+            script.text = jsCode;
+            document.body.appendChild(script);
+        }
+
+        loadTs().catch((e) => {
+            console.error('Failed to load TypeScript:', e);
+        });
+    </script>
+</body>
+</html>

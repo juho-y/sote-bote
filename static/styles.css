@@ -1,0 +1,208 @@
+/* Neo-brutalist theme; just like at the doctors office */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fef6e4;
+    color: #001858;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    border: 5px solid #001858;
+    padding: 20px;
+    background-color: #f582ae;
+    box-shadow: 8px 8px 0px #001858;
+    transform: rotate(-1deg);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    margin: 10px 0 20px 0;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    border: 4px solid #001858;
+    background-color: #fffffe;
+    box-shadow: 6px 6px 0px #001858;
+    resize: vertical;
+    transition: transform 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #001858;
+}
+
+.controls {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.language-select {
+    flex: 0 0 auto;
+}
+
+select {
+    padding: 12px 40px 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 4px solid #001858;
+    background-color: #8bd3dd;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #001858;
+    transition: all 0.2s;
+}
+
+select:hover {
+    background-color: #72c9d4;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #001858;
+}
+
+select:focus {
+    outline: none;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f3d2c1;
+    color: #001858;
+    border: 4px solid #001858;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #001858;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #ffc6c7;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #001858;
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #001858;
+}
+
+.summary-box {
+    background-color: #fffffe;
+    padding: 25px;
+    margin-top: 20px;
+    border: 5px solid #001858;
+    box-shadow: 8px 8px 0px #001858;
+    min-height: 100px;
+}
+
+.summary-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #001858;
+    border-bottom: 3px solid #001858;
+    padding-bottom: 10px;
+}
+
+.summary-box h4 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #001858;
+}
+
+.summary-box p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: normal;
+}
+
+.summary-box p.placeholder {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #001858;
+    border-top-color: #f582ae;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.summary-box ol {
+    margin-left: 25px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+.summary-box ol li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+#error-box {
+    background-color: #fff3cd;
+    border: 5px solid #856404;
+    box-shadow: 8px 8px 0px #856404;
+}
+
+#error-box h3 {
+    color: #856404;
+    border-bottom: 3px solid #856404;
+}
+
+#error-message {
+    color: #856404;
+    font-weight: bold;
+}
+
+/* Fun decorative elements */
+.summary-box:nth-of-type(1) {
+    transform: rotate(0.5deg);
+}
+
+#error-box {
+    transform: rotate(-0.5deg);
+}
